@@ -12,6 +12,7 @@ body {
 .logo-avatar { border: 3px solid #4dd0e1; }
 .logo-text { color: #00acc1; font-size: 1.5em; font-weight: bold; }
 
+
 .nav-link {
     color: #546e7a;
     font-size: 1.1em;
@@ -20,6 +21,7 @@ body {
     border-radius: 10px;
     transition: all 0.3s ease;
     position: relative;
+    text-decoration: none; /* 添加这一行，去除默认下划线 */
 }
 
 .nav-link::after {
@@ -36,6 +38,20 @@ body {
 
 .nav-link:hover { color: #00acc1; background: rgba(77, 208, 225, 0.1); }
 .nav-link:hover::after { width: 80%; }
+
+/* d:\Desktop\maimu1\css\theme.css */
+
+/* ... 原有代码 ... */
+
+/* 新增：当前激活的导航链接样式 */
+.nav-link.active {
+    color: #00acc1; /* 使用主题色 */
+    background: rgba(77, 208, 225, 0.15); /* 稍深一点的背景色 */
+    font-weight: bold; /* 加粗文字 */
+}
+
+/* 如果希望激活状态下也有下划线，可以取消下面这行的注释 */
+.nav-link.active::after { width: 80%; }
 
 .card {
     background: rgba(255, 255, 255, 0.9);
