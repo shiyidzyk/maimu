@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚拟主播介绍 - 霡霂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            min-height: 100vh;
+            color: #37474f;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #4dd0e1;
+            margin: 0 auto 20px;
+            /* 修改：设置背景图片 */
+            background-image: url('picture/tx.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #b2ebf2; /* 图片加载前的占位色 */
+            /* 移除之前的 flex 布局和 font-size，因为现在是图片 */
+            box-shadow: 0 4px 20px rgba(77, 208, 225, 0.3);
+        }
+
+        h1 {
+            color: #00acc1;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #546e7a;
+            font-size: 1.2em;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+        }
+
+        h2 {
+            color: #00acc1;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #b2ebf2;
+            padding-bottom: 10px;
+        }
+
+        /* 关于主播 */
+        .about p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            list-style: none;
+        }
+
+        .features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        /* 直播时间 */
+        .schedule {
+            text-align: center;
+        }
+
+        .schedule-item {
+            background: #e0f7fa;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #4dd0e1;
+        }
+
+        .day {
+            font-weight: bold;
+            color: #00acc1;
+            font-size: 1.1em;
+        }
+
+        .time {
+            color: #546e7a;
+        }
+
+        /* B站链接区域 */
+        .bilibili-section {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+
+        .bilibili-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #fb7299, #ff9ebb);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(251, 114, 153, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .bilibili-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(251, 114, 153, 0.4);
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #546e7a;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .avatar {
+                width: 150px;
+                height: 150px;
+                /* 移除了 font-size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <div class="avatar"></div>
+            <h1>霡霂</h1>
+            <p class="tagline">✨ 你的虚拟好朋友 ✨</p>
+        </header>
+
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 关于主播 -->
+            <div class="card about">
+                <h2>🎤 关于我</h2>
+                <p>大家好！我是霡霂，一个来自虚拟世界的可爱主播！</p>
+                <p>喜欢和大家聊天、玩游戏、分享生活中的小确幸~</p>
+                
+                <h2 style="margin-top: 30px;">🌟 特点</h2>
+                <ul class="features">
+                    <li>超级可爱的声音</li>
+                    <li>喜欢玩各种游戏</li>
+                    <li>经常和观众互动</li>
+                    <li>偶尔会唱歌给大家听</li>
+                    <li>每周都有新内容</li>
+                </ul>
+            </div>
+
+            <!-- 直播时间 -->
+            <div class="card schedule">
+                <h2>📅 直播时间</h2>
+                <div class="schedule-item">
+                    <div class="day">周一、周三、周五</div>
+                    <div class="time">晚上 8:00 - 10:00</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="day">周六</div>
+                    <div class="time">下午 2:00 - 5:00</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="day">周日</div>
+                    <div class="time">休息~ 💤</div>
+                </div>
+                <p style="margin-top: 20px; color: #78909c;">
+                    * 特殊情况会在动态通知哦~
+                </p>
+            </div>
+
+            <!-- B站链接 -->
+            <div class="card bilibili-section">
+                <h2>🔴 来B站找我玩吧！</h2>
+                <p style="margin-bottom: 20px;">点击下方按钮直达我的主页</p>
+                <a href="https://space.bilibili.com/3546391282453349" class="bilibili-btn" target="_blank">
+                    🎮 进入主页
+                </a><!-- 【霡霂_21日私皮满月版的个人空间-哔哩哔哩】 https://b23.tv/R0AXdmq -->
+                <p style="color: #78909c;">
+                    记得关注、点赞、投币三连哦~ 💕
+                </p>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>💙 霡霂 © 2026 | 用爱发电 💙</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                来自虚拟世界的温暖陪伴
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
