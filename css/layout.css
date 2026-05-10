@@ -1,0 +1,88 @@
+/* css/layout.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 导航栏布局 */
+.nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.navbar {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url('../picture/tx.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+/* 通用容器 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 卡片基础布局 */
+.card {
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+/* 按钮基础布局 */
+.btn {
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 页脚布局 */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
+}

@@ -1,0 +1,25 @@
+/* css/page-home.css */
+.hero { text-align: center; padding: 60px 0; animation: slideInUp 0.8s ease-in-out; }
+
+.hero-avatar {
+    width: 180px; height: 180px; border-radius: 50%; border: 5px solid #4dd0e1;
+    margin: 0 auto 30px;
+    background-image: url('../picture/tx.jpg'); /* 注意路径相对于 css 文件夹 */
+    background-size: cover; background-position: center;
+    animation: avatarBreath 3s ease-in-out infinite alternate;
+}
+
+.tagline { color: #546e7a; font-size: 1.3em; margin-bottom: 40px; }
+
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.nav-card-item { text-align: center; padding: 40px 20px; cursor: pointer; }
+.nav-card-icon { font-size: 3em; margin-bottom: 20px; color: #00acc1; transition: color 0.3s ease; }
+.nav-card-item:hover .nav-card-icon { color: #0ba8e0; }
+.nav-card-title { font-size: 1.4em; margin-bottom: 10px; color: #37474f; }
+.nav-card-desc { color: #78909c; margin-bottom: 20px; }

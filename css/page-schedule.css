@@ -1,0 +1,17 @@
+/* css/page-schedule.css */
+.schedule-list { text-align: center; animation: slideInRight 0.8s ease-in-out; }
+
+.schedule-item {
+    background: #e0f7fa; border-radius: 15px; padding: 15px 20px;
+    margin: 20px auto; border-left: 4px solid #4dd0e1;
+    display: inline-block; min-width: 220px; transition: all 0.3s ease;
+}
+.schedule-item:hover { transform: scale(1.05); background: #b2ebf2; }
+
+.day { font-weight: bold; color: #00acc1; font-size: 1.2em; margin-bottom: 5px; }
+.time { color: #546e7a; font-size: 1em; }
+
+.schedule-desc {
+    margin-top: 20px; color: #78909c; font-size: 0.95em;
+    line-height: 1.6; animation: slideInUp 1s ease-in-out;
+}

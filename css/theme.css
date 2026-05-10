@@ -1,0 +1,83 @@
+/* css/theme.css */
+body {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+    color: #37474f;
+}
+
+.nav-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 150, 136, 0.1);
+}
+
+.logo-avatar { border: 3px solid #4dd0e1; }
+.logo-text { color: #00acc1; font-size: 1.5em; font-weight: bold; }
+
+.nav-link {
+    color: #546e7a;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #00acc1;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover { color: #00acc1; background: rgba(77, 208, 225, 0.1); }
+.nav-link:hover::after { width: 80%; }
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 150, 136, 0.15);
+}
+
+h1, h2 {
+    color: #00acc1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 1.8em; border-bottom: 2px solid #b2ebf2; padding-bottom: 10px; }
+
+.btn {
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active { transform: translateY(1px); }
+
+/* 按钮颜色变体 */
+.btn-primary { background: linear-gradient(135deg, #00acc1, #4dd0e1); }
+.btn-bilibili { background: linear-gradient(135deg, #fb7299, #ff9ebb); }
+.btn-qq { background: linear-gradient(135deg, #12b7f5, #4dcfff); }
+
+footer {
+    color: #546e7a;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) { h1 { font-size: 2em; } }

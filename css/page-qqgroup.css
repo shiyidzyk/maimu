@@ -1,0 +1,6 @@
+/* css/page-qqgroup.css */
+.qq-group-content { text-align: center; animation: slideInRight 0.8s ease-in-out; }
+.qq-group-desc {
+    color: #546e7a; margin: 20px 0 30px;
+    font-size: 1.1em; line-height: 1.8;
+}

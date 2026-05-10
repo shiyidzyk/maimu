@@ -1,0 +1,32 @@
+/* css/animations.css */
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes avatarBreath {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+/* 全局应用动画 */
+body { animation: pageFadeIn 0.8s ease-in-out; }
+.card { animation: slideInUp 0.8s ease-in-out; }
+h1, h2 { animation: slideInLeft 0.8s ease-in-out; }
+.btn { animation: slideInUp 1s ease-in-out; }
+footer { animation: slideInUp 1s ease-in-out; }

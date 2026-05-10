@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚拟主播介绍 - 霡霂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            min-height: 100vh;
+            color: #37474f;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #4dd0e1;
+            margin: 0 auto 20px;
+            background-image: url('picture/tx.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #b2ebf2;
+            box-shadow: 0 4px 20px rgba(77, 208, 225, 0.3);
+        }
+
+        h1 {
+            color: #00acc1;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #546e7a;
+            font-size: 1.2em;
+        }
+
+        /* 主要内容区域 - 关键调整：左侧单个大卡片，右侧两个卡片上下排列 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* 右侧容器：包含直播时间+QQ群两个卡片，总高度匹配左侧 */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 150, 136, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 内容垂直居中 */
+        }
+
+        /* 左侧关于我卡片：默认高度自适应，右侧两个卡片总高度匹配 */
+        .about {
+            height: 100%;
+            justify-content: flex-start; /* 内容从上到下排列 */
+        }
+
+        h2 {
+            color: #00acc1;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #b2ebf2;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        /* 关于主播 */
+        .about p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            list-style: none;
+        }
+
+        .features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        /* 直播时间板块 - 高度适配 */
+        .schedule {
+            text-align: center;
+            flex: 1; /* 自动分配高度 */
+        }
+
+        .schedule-item {
+            background: #e0f7fa;
+            border-radius: 15px;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-left: 4px solid #4dd0e1;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .day {
+            font-weight: bold;
+            color: #00acc1;
+            font-size: 1.1em;
+        }
+
+        .time {
+            color: #546e7a;
+            font-size: 0.9em;
+        }
+
+        .schedule-desc {
+            margin-top: 10px;
+            color: #78909c;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        /* QQ粉丝群板块 - 高度适配 + 按钮样式优化（匹配图一） */
+        .qq-group {
+            text-align: center;
+            flex: 1; /* 自动分配高度 */
+        }
+
+        .qq-group-desc {
+            color: #546e7a;
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        /* 匹配图一的QQ按钮样式 */
+        .qq-group-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #12b7f5, #4dcfff);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(18, 183, 245, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .qq-group-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(18, 183, 245, 0.4);
+            background: linear-gradient(135deg, #0ba8e0, #3bc2ff);
+        }
+
+        .qq-group-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(18, 183, 245, 0.3);
+        }
+
+        /* B站链接区域 */
+        .bilibili-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .bilibili-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #fb7299, #ff9ebb);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(251, 114, 153, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .bilibili-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(251, 114, 153, 0.4);
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #546e7a;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .right-column {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .schedule, .qq-group {
+                flex: 1 1 100%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <div class="avatar"></div>
+            <h1>霡霂</h1>
+            <p class="tagline">✨ 你的虚拟好朋友 ✨</p>
+        </header>
+
+        <!-- 主要内容 - 左侧：关于我 | 右侧：直播时间+QQ群上下排列 -->
+        <div class="main-content">
+            <!-- 左侧：关于我（单个大卡片） -->
+            <div class="card about">
+                <h2>🎤 关于我</h2>
+                <p>大家好！我是霡霂，一个来自虚拟世界的可爱主播！</p>
+                <p>这里是霡霂“mài mù”（小雨的意思啦~），大家可以叫我霂霂（沐沐）或者小雨~</p>
+                <p>喜欢和大家聊天、玩游戏、分享生活中的小确幸~</p>
+                
+                <h2 style="margin-top: 30px;">🌟 特点</h2>
+                <ul class="features">
+                    <li>超级可爱的声音</li>
+                    <li>喜欢玩各种游戏</li>
+                    <li>经常和观众互动</li>
+                    <li>经常会唱歌给大家听</li>
+                    <li>每周都有新内容</li>
+                </ul>
+            </div>
+
+            <!-- 右侧：包含直播时间+QQ群两个卡片 -->
+            <div class="right-column">
+                <!-- 直播时间卡片 -->
+                <div class="card schedule">
+                    <h2>📅 直播时间</h2>
+                    <div class="schedule-item">
+                        <div class="day">每天</div>
+                        <div class="time">19:00-23:00</div>
+                    </div>
+                    <p class="schedule-desc">
+                        * 每天看心情和加班机加班喵~<br>
+                        * 特殊情况会在动态通知喵~
+                    </p>
+                </div>
+
+                <!-- QQ粉丝群卡片 -->
+                <div class="card qq-group">
+                    <h2>🐧 加入粉丝群</h2>
+                    <p class="qq-group-desc">
+                        加入专属粉丝群，和霡霂&小伙伴们一起聊天<br>
+                        第一时间获取直播通知、专属福利~
+                    </p>
+                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=1MTGdqxpfOdpU1Vz%2BhMjD%2FH9XBZfZqmo2zAAwruj%2F%2FNCABixveBnVT56mk4oXdPr&busi_data=eyJncm91cENvZGUiOiIxMDk4NDY4NzAwIiwidG9rZW4iOiIvSlFvNGJNK0kyeWdnTnFNVVlncWVWM1RTUWJSb2tJb0Y4ZG1qZFJwQzVsWFN5V2N6VldoUlhZS3BVbklQZ0luIiwidWluIjoiMzUxNDQ3NjgwNyJ9&data=PerHDUWI8si6GeyifzxRImZniucNcgGmLfVUrKIxe7QoESqeGkaUUOCBqcRqfwxOffW6uVI22mjUfuM_rr1sfQ&svctype=4&tempid=h5_group_info" class="fan-group-btn" target="_blank" class="qq-group-btn" target="_blank">
+                        🐧 一键加入QQ粉丝群
+                    </a>
+                </div>
+            </div>
+
+            <!-- B站链接区域（跨两列） -->
+            <div class="card bilibili-section">
+                <h2>来B站找我玩吧！</h2>
+                <p style="margin-bottom: 20px;">点击下方按钮直达我的主页</p>
+                <a href="https://space.bilibili.com/3546391282453349" class="bilibili-btn" target="_blank">
+                    🎮 进入主页
+                </a>
+                
+                <!-- B站动态嵌入 -->
+                <div style="margin: 30px 0; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #00acc1; margin: 15px 0; font-size: 1.2em;">💬 最新动态</h3>
+                    <iframe src="https://space.bilibili.com/3546391282453349/video" 
+                            scrolling="auto" border="0" frameborder="no" framespacing="0" 
+                            width="100%" height="800" style="background: #fff;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>💙 霡霂 © 2026 | 用爱发电 💙</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                来自虚拟世界的温暖陪伴
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

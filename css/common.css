@@ -1,0 +1,53 @@
+/* d:\Desktop\maimu1\css\common.css */
+
+/* ... (保留原有的 * body, animations, nav-container 等基础样式) ... */
+
+/* 确保图片路径正确：相对于 css 文件夹，向上跳一级到根目录，再进入 picture */
+.logo-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #4dd0e1;
+    background-image: url('../picture/tx.jpg'); /* 关键修正 */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ... (保留 .navbar, .nav-menu, .card 等样式) ... */
+
+/* 通用按钮基础样式 - 所有按钮共用 */
+.btn {
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 40px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    animation: slideInUp 1s ease-in-out;
+    color: white; /* 默认文字颜色 */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 按钮变体：通过添加第二个类名来改变颜色，而不是重写整个 .btn */
+.btn-primary {
+    background: linear-gradient(135deg, #00acc1, #4dd0e1); /* 默认蓝 */
+}
+
+.btn-bilibili {
+    background: linear-gradient(135deg, #fb7299, #ff9ebb); /* B站粉 */
+    font-size: 1.2em;
+    padding: 15px 45px;
+}
+
+.btn-qq {
+    background: linear-gradient(135deg, #12b7f5, #4dcfff); /* QQ蓝 */
+    font-size: 1.1em;
+}
+
+/* ... (保留 footer 等其他样式) ... */

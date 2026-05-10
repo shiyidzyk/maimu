@@ -1,0 +1,19 @@
+/* css/page-about.css */
+.about-content {
+    line-height: 1.8; font-size: 1.1em; color: #37474f;
+    animation: slideInRight 0.8s ease-in-out;
+}
+.about-content p { margin-bottom: 20px; }
+
+.features {
+    list-style: none; margin-top: 30px;
+    animation: slideInRight 1s ease-in-out;
+}
+.features li {
+    padding: 12px 0; padding-left: 40px; position: relative;
+    margin-bottom: 10px; transition: transform 0.2s ease;
+}
+.features li:hover { transform: translateX(10px); }
+.features li:before {
+    content: "✨"; position: absolute; left: 0; font-size: 1.2em;
+}
